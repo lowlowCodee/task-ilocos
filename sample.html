@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Heroes Hotel</title>
+    <style>
+        .hero-banner {
+            background-size: cover;
+            height: 600px; /* Adjust the height as needed */
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeIn 1s ease-in-out; /* Add a fade-in animation */
+            opacity: 0; /* Initially hide the hero section */
+            transition: opacity 0.5s; /* Smooth transition when opacity changes */
+        }
+        .btn-primary {
+            background-color: #ff6600;
+            border-color: #ff6600;
+        }
+        /* Custom scrollbar style */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #ff6600;
+        }
+        /* Add more styles as needed */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg text-white bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Heroes Hotel</a>
+        </div>
+    </nav>
+    <div class="hero-banner" style="background-image: url('./spotImg/baluarte.JPG');" data-mdb-toggle="animation" data-mdb-animation="slide-in-left" data-mdb-animation-start="onScroll">
+        <h1>Welcome to Heroes Hotel</h1>
+        <p>Your Perfect Getaway</p>
+        <a href="#booking" class="btn btn-primary">Book Now</a>
+    </div>
+	<div class="hero-banner" style="background-image: url('./spotImg/vigan.jpg');">
+    </div>
+	<div class="hero-banner" style="background-image: url('./spotImg/cafeBojedor.jpg');">
+    </div>
+	<div class="hero-banner" style="background-image: url('./spotImg/patapat.jpg');">
+    </div>
+	<div class="hero-banner" style="background-image: url('./spotImg/paoay.webp');">
+    </div>
+	<div class="hero-banner" style="background-image: url('./spotImg/bantaybell.jpg');">
+    </div>
+	<div class="hero-banner" style="background-image: url('./spotImg/cafeBojedor.jpg');">
+    </div>
+
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+        // Show hero section when it's in the viewport
+        window.addEventListener('scroll', () => {
+            const heroSections = document.querySelectorAll('.hero-banner');
+            heroSections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    section.style.opacity = 1;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
